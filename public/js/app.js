@@ -2108,9 +2108,9 @@ __webpack_require__.r(__webpack_exports__);
         this.requiredRib = true;
       } else {
         var dateDebut = new Date(debut);
-        var DateDebut = ("0" + dateDebut.getDate()).slice(-2) + "/" + ("0" + (dateDebut.getMonth() + 1)).slice(-2) + "/" + dateDebut.getFullYear();
+        dateDebut = ("0" + dateDebut.getDate()).slice(-2) + "/" + ("0" + (dateDebut.getMonth() + 1)).slice(-2) + "/" + dateDebut.getFullYear();
         var dateFin = new Date(fin);
-        var DateFin = ("0" + dateFin.getDate()).slice(-2) + "/" + ("0" + (dateFin.getMonth() + 1)).slice(-2) + "/" + dateFin.getFullYear();
+        dateFin = ("0" + dateFin.getDate()).slice(-2) + "/" + ("0" + (dateFin.getMonth() + 1)).slice(-2) + "/" + dateFin.getFullYear();
         var dCli = this.reelDataClient;
 
         if (debut == "" && fin == "") {
@@ -2121,7 +2121,7 @@ __webpack_require__.r(__webpack_exports__);
         } else {
           /*== Filter les operations par rib donné et entre deux date ==*/
           var filter = dCli.filter(function (d) {
-            return d.RIB === rib && d.Date >= DateDebut && d.Date <= DateFin;
+            return d.RIB === rib && d.Date >= dateDebut && d.Date <= dateFin;
           });
         }
         /*== Affecter les operations filter par rib donné et entre deux date dans un tableau pour l'affichage sur interface graphique ==*/
